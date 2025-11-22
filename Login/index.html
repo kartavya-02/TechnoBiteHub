@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login Component</title>
+  <link rel="stylesheet" href="login-style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <form id="loginForm" class="login-card" onsubmit="return false;">
+      <h1>Sign in</h1>
+      <label class="field">
+        <span>Username</span>
+        <input id="username" autocomplete="username" required />
+      </label>
+      <label class="field">
+        <span>Password</span>
+        <input id="password" type="password" autocomplete="current-password" required />
+      </label>
+      <a id="loginBtn" class="btn" type="submit" href="../home.html">Login</a>
+      <p id="msg" class="msg" aria-live="polite"></p>
+      
+    </form>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
