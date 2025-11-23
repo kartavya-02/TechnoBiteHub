@@ -1,6 +1,7 @@
 LOGIN CREDENTIALS..
+
 LOGIN ID: admin //
-PASSWORD: 1234/////
+PASSWORD: 1234
 
 
 This project is a simple Canteen Menu & Feedback Website where users can view daily food items and give star ratings for each dish.
