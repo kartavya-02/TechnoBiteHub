@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Techno BiteHub Canteen</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar" id="home">
+      <div class="navbar-container container">
+        <input type="checkbox" />
+        <div class="hamburger-lines">
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          <span class="line line3"></span>
+        </div>
+        <ul class="menu-items">
+          <li><a href="./home.html">Home</a></li>
+          <li><a href="#feedback">Feedback</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a class="logo" href="">
+          <img
+            src="https://imgs.search.brave.com/rikhW_K8ry-ykaPGBkJcj-w1spPxNuZesX2kqC3DbX0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/c2lrc2hhcGVkaWEu/Y29tL3B1YmxpYy9k/YXRhL2NvbGxlZ2Vz/L3RlY2huby1tYWlu/LXNhbHQtbGFrZS1z/YWx0LWxha2Utd2Vz/dC1iZW5nYWwvdGVj/aG5vLW1haW4tc2Fs/dC1sYWtlLXNhbHQt/bGFrZS13ZXN0LWJl/bmdhbC1sb2dvLndl/YnA"
+            alt=""
+          />
+        </a>
+      </div>
+    </nav>
+    <h1 class="canteen-heading">BiteHub Canteen</h2>
+    <h2 class="food-menu-heading">Today's Canteen Food Menu</h2>
+    <!-- ⭐⭐ MEAL TABS ABOVE FOOD MENU ⭐⭐ -->
+
+    <div class="meal-tabs">
+      <button onclick="showSection('all')" class="meal-btn">All</button>
+      <button onclick="showSection('breakfast')" class="meal-btn">
+        🍳 Breakfast
+      </button>
+      <button onclick="showSection('lunch')" class="meal-btn">🍛 Lunch</button>
+      <button onclick="showSection('snacks')" class="meal-btn">
+        🍟 Snacks
+      </button>
+      <button onclick="showSection('special')" class="meal-btn special-btn">
+        ⭐ Today's Special
+      </button>
+    </div>
+
+    <h2 class="special-heading">⭐ TODAY’S SPECIAL MENU ⭐</h2>
+    <div id="special" class="food-section"></div>
+
+    <section id="food-menu">
+      <div class="container">
+        <div class="row">
+          <div class="food-menu-item col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="food-image">
+              <img
+                src="https://imgs.search.brave.com/w1Q4kTJ04-t4A7IWKKsKPD3OwMWcqe528M9FuQzzHUA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9qYWRhLXBvaGEt/bmFta2Vlbi1jaGl2/ZGEtdGhpY2stcG9o/ZS1jaGl3ZGEtaXMt/amFyLXNuYWNrLXdp/dGgtbWl4LXN3ZWV0/LXNhbHR5LW51dHMt/Zmxhdm91cnMtc2Vy/dmVkLXdpdGgtdGVh/LXNlbGVjdGl2ZS1m/b2N1c180NjY2ODkt/NDMxNDQuanBnP3Nl/bXQ9YWlzX2h5YnJp/ZCZ3PTc0MA"
+                alt=""
+              />
+            </div>
+            <div class="food-description">
+              <h2 class="food-title">Poha</h2>
+              <p>
+                Light, fluffy flattened rice cooked with turmeric, onions,
+                peanuts, and coriander.
+              </p>
+              <p class="food-price">Price: &#8377; 25</p>
+              <div class="item">
+                <!-- AVERAGE RATING SHOWN HERE -->
+
+                <!-- STAR RATING USERS CAN CLICK -->
+                <div class="rating" data-item="Masala Dosa"></div>
+              </div>
+            </div>
+          </div>
+          <div class="food-menu-item col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="food-image">
+              <img
+                src="https://imgs.search.brave.com/bH7zaX1vCojaXwXzjcMsic1HQXc4SbVCNiTJQZdZQIA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9pZGx5LXNhbWJh/ci1pZGxpLXdpdGgt/c2FtYmhhci1ncmVl/bi1yZWQtY2h1dG5l/eS1wb3B1bGFyLXNv/dXRoLWluZGlhbi1i/cmVha2Zhc3RfOTk5/NzY2LTI2MTEuanBn/P3NlbXQ9YWlzX2h5/YnJpZCZ3PTc0MCZx/PTgw"
+                alt=""
+              />
+            </div>
+            <div class="food-description">
+              <h2 class="food-title">Idli Sambar</h2>
+              <p>
+                Soft steamed idlis served with hot sambar and coconut chutney.
+              </p>
+              <p class="food-price">Price: &#8377; 35</p>
+            </div>
+          </div>
+          <div class="food-menu-item col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="food-image">
+              <img
+                src="https://imgs.search.brave.com/gYeNqo_cRpyaYrSshfGNP_ZzlFEsBfdSKSiH9_pvugQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNDc1/NzEyMzQwL3Bob3Rv/L21hc2FsYS1zaW4u/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PTNaRUVnWFdUR3Uw/aUdKdUVmZEhNdjJt/cE9xR2hxYnNFTk9U/ZDNnemVaV2M9"
+                alt=""
+              />
+            </div>
+            <div class="food-description">
+              <h2 class="food-title">Masala Dosa</h2>
+              <p>
+                Crispy dosa filled with spiced potato masala, served with
+                chutney & sambar.
+              </p>
+              <p class="food-price">Price: &#8377; 45</p>
+              <div class="item">
+                <!-- AVERAGE RATING SHOWN HERE -->
+
+                <!-- STAR RATING USERS CAN CLICK -->
+                <div class="rating" data-item="Masala Dosa"></div>
+              </div>
+            </div>
+          </div>
+          <div class="food-menu-item col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="food-image">
+              <img
+                src="https://cookingfromheart.com/wp-content/uploads/2020/09/Aloo-Paratha-4.jpg"
+                alt=""
+              />
+            </div>
+            <div class="food-description">
+              <h2 class="food-title">Aloo Paratha</h2>
+              <p>
+                Wheat paratha stuffed with spiced potatoes, served with curd and
+                pickle.
+              </p>
+              <p class="food-price">Price: &#8377; 40</p>
+              <div class="item">
+                <!-- AVERAGE RATING SHOWN HERE -->
+
+                <!-- STAR RATING USERS CAN CLICK -->
+                <div class="rating" data-item="Masala Dosa"></div>
+              </div>
+            </div>
+          </div>
+          <div class="food-menu-item col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="food-image">
+              <img
+                src="https://www.shanazrafiq.com/wp-content/uploads/2017/04/02-DSC_0097.jpg"
+                alt=""
+              />
+            </div>
+            <div class="food-description">
+              <h2 class="food-title">Veg sandwich</h2>
+              <p>Toasted bread with fresh veggies and light mayo.</p>
+              <p class="food-price">Price: &#8377; 30</p>
+              <div class="item">
+                <!-- AVERAGE RATING SHOWN HERE -->
+
+                <!-- STAR RATING USERS CAN CLICK -->
+                <div class="rating" data-item="Masala Dosa"></div>
+              </div>
+            </div>
+          </div>
+          <div class="food-menu-item col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="food-image">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIIdD4agOpQVqCvknYUoB14ulGKstj83sddw&s"
+                alt=""
+              />
+            </div>
+            <div class="food-description">
+              <h2 class="food-title">kachori sabzi</h2>
+              <p>Toasted bread with fresh veggies and light mayo.</p>
+              <p class="food-price">Price: &#8377; 30</p>
+              <div class="item">
+                <!-- AVERAGE RATING SHOWN HERE -->
+
+                <!-- STAR RATING USERS CAN CLICK -->
+                <div class="rating" data-item="Masala Dosa"></div>
+              </div>
+            </div>
+          </div>
+          <div class="food-menu-item col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="food-image">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXWHMTQDALTpyB8sxVUrmiTHqvoDWnd2VxNg&s"
+                alt=""
+              />
+            </div>
+            <div class="food-description">
+              <h2 class="food-title">Upma</h2>
+              <p>Toasted bread with fresh veggies and light mayo.</p>
+              <p class="food-price">Price: &#8377; 30</p>
+              <div class="item">
+                <!-- AVERAGE RATING SHOWN HERE -->
+
+                <!-- STAR RATING USERS CAN CLICK -->
+                <div class="rating" data-item="Masala Dosa"></div>
+              </div>
+            </div>
+          </div>
+          <div class="food-menu-item col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="food-image">
+              <img
+                src="https://www.indianhealthyrecipes.com/wp-content/uploads/2019/04/bread-omelette-480x270.jpg"
+                alt=""
+              />
+            </div>
+            <div class="food-description">
+              <h2 class="food-title">Bread Omlette</h2>
+              <p>Two-egg omelette folded inside toasted bread.</p>
+              <p class="food-price">Price: &#8377; 35</p>
+              <div class="item">
+                <!-- AVERAGE RATING SHOWN HERE -->
+
+                <!-- STAR RATING USERS CAN CLICK -->
+                <div class="rating" data-item="Masala Dosa"></div>
+                <div class="item">
+                  <div class="like-box" data-item="Masala Dosa">
+                    <span class="like-btn">👍</span>
+                    <span class="dislike-btn">👎</span>
+                    <span class="count like-count">0</span> |
+                    <span class="count dislike-count">0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="food-menu-item col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="food-image">
+              <img
+                src="https://imgs.search.brave.com/X0IJOa-KT9GuZKHlPtF8KtFlrnEti8myre8VMReUMIE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9pbmRpYW4taGlu/ZHUtdmVnLXRoYWxp/LWFsc28ta25vd24t/YXMtZm9vZC1wbGF0/dGVyLWlzLWNvbXBs/ZXRlLWx1bmNoLWRp/bm5lci1tZWFsLWNs/b3NldXAtc2VsZWN0/aXZlLWZvY3VzXzQ2/NjY4OS05MTAxLmpw/Zz9zZW10PWFpc19p/bmNvbWluZyZ3PTc0/MCZxPTgw"
+                alt=""
+              />
+            </div>
+            <div class="food-description">
+              <h2 class="food-title">Veg Thali</h2>
+              <p>Includes roti, dal, sabzi, rice, salad, and pickle.</p>
+              <p class="food-price">Price: &#8377; 70</p>
+              <div class="item">
+                <!-- AVERAGE RATING SHOWN HERE -->
+
+                <!-- STAR RATING USERS CAN CLICK -->
+                <div class="rating" data-item="Masala Dosa"></div>
+                <div class="item">
+                  <div class="like-box" data-item="Masala Dosa">
+                    <span class="like-btn">👍</span>
+                    <span class="dislike-btn">👎</span>
+                    <span class="count like-count">0</span> |
+                    <span class="count dislike-count">0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="food-menu-item col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="food-image">
+              <img
+                src="https://imgs.search.brave.com/p0Y0jPsfpi1UccD44gCBmn6oCP3oMpCFLOnFdPIXJRk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzNmLzFk/LzVlLzNmMWQ1ZTJj/M2I1MjU4ZWE4ZTNh/NjIxN2YwNzU2NDJm/LmpwZw"
+                alt=""
+              />
+            </div>
+            <div class="food-description">
+              <h2 class="food-title">Paneer Butter Masala + Roti (2 pcs)</h2>
+              <p>Creamy tomato-based paneer curry with soft rotis.</p>
+              <p class="food-price">Price: &#8377; 90</p>
+              <div class="item">
+                <!-- AVERAGE RATING SHOWN HERE -->
+
+                <!-- STAR RATING USERS CAN CLICK -->
+                <div class="rating" data-item="Masala Dosa"></div>
+                <div class="item">
+                  <div class="like-box" data-item="Masala Dosa">
+                    <span class="like-btn">👍</span>
+                    <span class="dislike-btn">👎</span>
+                    <span class="count like-count">0</span> |
+                    <span class="count dislike-count">0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="food-menu-item col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="food-image">
+              <img
+                src="https://imgs.search.brave.com/YVh7widU2ed_UcgRkMd2do_stzBIKPn-yecxuU_josI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMTUv/OTMzLzYxNy9zbWFs/bC9jaG9sZS1iaGF0/dXJlLWlzLWEtbm9y/dGgtaW5kaWFuLWZv/b2QtZGlzaC1hLWNv/bWJpbmF0aW9uLW9m/LWNoYW5hLW1hc2Fs/YS1hbmQtYmhhdHVy/YS1vci1wdXJpLWZy/ZWUtcGhvdG8uanBn"
+                alt=""
+              />
+            </div>
+            <div class="food-description">
+              <h2 class="food-title">Chole Bhature</h2>
+              <p>Spicy chole served with fluffy fried bhature.</p>
+              <p class="food-price">Price: &#8377; 60</p>
+              <div class="item">
+                <!-- AVERAGE RATING SHOWN HERE -->
+
+                <!-- STAR RATING USERS CAN CLICK -->
+                <div class="rating" data-item="Masala Dosa"></div>
+                <div class="item">
+                  <div class="like-box" data-item="Masala Dosa">
+                    <span class="like-btn">👍</span>
+                    <span class="dislike-btn">👎</span>
+                    <span class="count like-count">0</span> |
+                    <span class="count dislike-count">0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="food-menu-item col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="food-image">
+              <img
+                src="https://imgs.search.brave.com/OvPHolc6KiIFIL3pMN9OH-9UI1Kgd7Q0iUQUAbl3XqQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/aG9tZW1hZGUtZnJp/ZWQtcmljZS13aXRo/LW1hbmNodXJpYW4t/djAtOXFnNm02b3pm/MXFlMS5qcGVnP3dp/ZHRoPTY0MCZjcm9w/PXNtYXJ0JmF1dG89/d2VicCZzPTEwYWI3/NTA4MjljODI5NWRi/ZDQxNzRlMWNhOWZk/YWY5NWU5OTlkZjg"
+                alt=""
+              />
+            </div>
+            <div class="food-description">
+              <h2 class="food-title">Fried Rice + Manchurian</h2>
+              <p>Veg fried rice served with tangy veg manchurian gravy.</p>
+              <p class="food-price">Price: &#8377; 80</p>
+              <div class="item">
+                <!-- AVERAGE RATING SHOWN HERE -->
+
+                <!-- STAR RATING USERS CAN CLICK -->
+                <div class="rating" data-item="Masala Dosa"></div>
+                <div class="item">
+                  <div class="like-box" data-item="Masala Dosa">
+                    <span class="like-btn">👍</span>
+                    <span class="dislike-btn">👎</span>
+                    <span class="count like-count">0</span> |
+                    <span class="count dislike-count">0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="food-menu-item col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="food-image">
+              <img
+                src="https://imgs.search.brave.com/yRZKRY36xyyuz7eMkYMN0k9sO6XdrRoVi91ryNutYE0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/a2l0Y2hlbnNhbmN0/dWFyeS5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMjAvMDgv/RWFzeS1DaGlja2Vu/LUN1cnJ5LXRhbGwz/LTExNy53ZWJw"
+                alt=""
+              />
+            </div>
+            <div class="food-description">
+              <h2 class="food-title">Chicken Curry + Rice</h2>
+              <p>Spicy homemade chicken curry served with boiled rice.</p>
+              <p class="food-price">Price: &#8377; 110</p>
+              <div class="item">
+                <!-- AVERAGE RATING SHOWN HERE -->
+
+                <!-- STAR RATING USERS CAN CLICK -->
+                <div class="rating" data-item="Masala Dosa"></div>
+                <div class="item">
+                  <div class="like-box" data-item="Masala Dosa">
+                    <span class="like-btn">👍</span>
+                    <span class="dislike-btn">👎</span>
+                    <span class="count like-count">0</span> |
+                    <span class="count dislike-count">0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="food-menu-item col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="food-image">
+              <img
+                src="https://imgs.search.brave.com/CxAeMScG68auJVJtUyiqtsLrHYNmNxQwwQVZ_sHTlDI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/Y3JlYXRlLnZpc3Rh/LmNvbS9hcGkvbWVk/aWEvc21hbGwvNDYy/NjEyNzAyL3N0b2Nr/LXBob3RvLWRhbC1r/aGljaGRpLWZyeS1n/aGVlLXNlcnZlZC1i/b3dsLXRhc3R5LWlu/ZGlhbi1vbmUtcG90"
+                alt=""
+              />
+            </div>
+            <div class="food-description">
+              <h2 class="food-title">Dal Khichdi</h2>
+              <p>Comforting yellow dal khichdi tempered with ghee.</p>
+              <p class="food-price">Price: &#8377; 45</p>
+              <div class="item">
+                <!-- AVERAGE RATING SHOWN HERE -->
+
+                <!-- STAR RATING USERS CAN CLICK -->
+                <div class="rating" data-item="Masala Dosa"></div>
+                <div class="item">
+                  <div class="like-box" data-item="Masala Dosa">
+                    <span class="like-btn">👍</span>
+                    <span class="dislike-btn">👎</span>
+                    <span class="count like-count">0</span> |
+                    <span class="count dislike-count">0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="food-menu-item col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="food-image">
+              <img
+                src="https://imgs.search.brave.com/tCdeRJIMeW2cBN_uvCHsApkNPAqHjbJZsVFRgp3PgPI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/dG9kYXlzLWx1bmNo/LXZlZy1iaXJ5YW5p/LXdpdGgtcmFpdGEt/djAteWY0ZGpncHh6/ZXFlMS5wbmc_d2lk/dGg9NjQwJmNyb3A9/c21hcnQmYXV0bz13/ZWJwJnM9M2FlMjM5/YmU0MGRiOWExZDFj/ZjI1OWZmNjlmNDVm/NzFjYjlhN2U1NA"
+                alt=""
+              />
+            </div>
+            <div class="food-description">
+              <h2 class="food-title">Veg Biryani + Raita</h2>
+              <p>Aromatic spiced rice with vegetables, served with raita.</p>
+              <p class="food-price">Price: &#8377; 90</p>
+              <div class="item">
+                <!-- AVERAGE RATING SHOWN HERE -->
+
+                <!-- STAR RATING USERS CAN CLICK -->
+                <div class="rating" data-item="Masala Dosa"></div>
+                <div class="item">
+                  <div class="like-box" data-item="Masala Dosa">
+                    <span class="like-btn">👍</span>
+                    <span class="dislike-btn">👎</span>
+                    <span class="count like-count">0</span> |
+                    <span class="count dislike-count">0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="food-menu-item col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="food-image">
+              <img
+                src="https://imgs.search.brave.com/q8RdFtJOPUkvYT6uXuYxiyUsO7wOgd8lw5RK8-JHh5c/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9kdW0taGFuZGkt/Y2hpY2tlbi1iaXJ5/YW5pLWlzLXByZXBh/cmVkLWVhcnRoZW4t/Y2xheS1wb3QtY2Fs/bGVkLWhhYW5kaS1w/b3B1bGFyLWluZGlh/bi1ub24tdmVnZXRh/cmlhbi1mb29kXzQ2/NjY4OS01MjI3NC5q/cGc_c2VtdD1haXNf/aW5jb21pbmcmdz03/NDAmcT04MA"
+                alt=""
+              />
+            </div>
+            <div class="food-description">
+              <h2 class="food-title">Chicken Biryani (Regular)</h2>
+              <p>
+                Flavorful chicken biryani with masala-coated chicken pieces.
+              </p>
+              <p class="food-price">Price: &#8377; 120</p>
+              <div class="item">
+                <!-- AVERAGE RATING SHOWN HERE -->
+
+                <!-- STAR RATING USERS CAN CLICK -->
+                <div class="rating" data-item="Masala Dosa"></div>
+                <div class="item">
+                  <div class="like-box" data-item="Masala Dosa">
+                    <span class="like-btn">👍</span>
+                    <span class="dislike-btn">👎</span>
+                    <span class="count like-count">0</span> |
+                    <span class="count dislike-count">0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="food-menu-item col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="food-image">
+              <img
+                src="https://imgs.search.brave.com/UswTCC3iVhNSzLFa0aghUXhQJ7Irht_ZQYwkEci64Ag/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9vbW5p/dm9yZXNjb29rYm9v/ay5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMTkvMDYvMTQw/M19FYXN5LUVnZy1D/dXJyeV8wMDMuanBn"
+                alt=""
+              />
+            </div>
+            <div class="food-description">
+              <h2 class="food-title">Egg Curry + Rice</h2>
+              <p>Boiled eggs in a spicy masala curry served with rice.</p>
+              <p class="food-price">Price: &#8377; 70</p>
+              <div class="item">
+                <!-- AVERAGE RATING SHOWN HERE -->
+
+                <!-- STAR RATING USERS CAN CLICK -->
+                <div class="rating" data-item="Masala Dosa"></div>
+                <div class="item">
+                  <div class="like-box" data-item="Masala Dosa">
+                    <span class="like-btn">👍</span>
+                    <span class="dislike-btn">👎</span>
+                    <span class="count like-count">0</span> |
+                    <span class="count dislike-count">0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="food-menu-item col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="food-image">
+              <img
+                src="https://imgs.search.brave.com/WJUYmAAcZnKYjvIHCuyhBvoaMUtINCY6kmgqqFZPWmU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jb29r/aWxpY2lvdXMuY29t/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDIy/LzAxL1ZlZy1Lb2xo/YXB1cmktMzUtOTYw/eDE0NDAuanBn"
+                alt=""
+              />
+            </div>
+            <div class="food-description">
+              <h2 class="food-title">Mix Veg Curry + Roti (3 pcs)</h2>
+              <p>Healthy medley of veggies in a light gravy.</p>
+              <p class="food-price">Price: &#8377; 65</p>
+              <div class="item">
+                <!-- AVERAGE RATING SHOWN HERE -->
+
+                <!-- STAR RATING USERS CAN CLICK -->
+                <div class="rating" data-item="Masala Dosa"></div>
+                <div class="item">
+                  <div class="like-box" data-item="Masala Dosa">
+                    <span class="like-btn">👍</span>
+                    <span class="dislike-btn">👎</span>
+                    <span class="count like-count">0</span> |
+                    <span class="count dislike-count">0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="food-menu-item col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="food-image">
+              <img
+                src="https://imgs.search.brave.com/6FOjA91XxopIGrszK4wpIFuhl8eVZ3JgKEFKy4eIUPg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly91cy4x/MjNyZi5jb20vNDUw/d20vaW5kaWFuZm9v/ZGltYWdlcy9pbmRp/YW5mb29kaW1hZ2Vz/MTgwNi9pbmRpYW5m/b29kaW1hZ2VzMTgw/NjAwNzgxLzEwMzk0/MzAxNy1zYW1vc2Et/c25hY2stc2VydmVk/LXdpdGgtdG9tYXRv/LWtldGNodXAtYW5k/LW1pbnQtY2h1dG5l/eS5qcGc_dmVyPTY"
+                alt=""
+              />
+            </div>
+            <div class="food-description">
+              <h2 class="food-title">Samosa (1 pc)</h2>
+              <p>Crispy fried pastry filled with spicy potato stuffing.</p>
+              <p class="food-price">Price: &#8377; 12</p>
+              <div class="item">
+                <!-- AVERAGE RATING SHOWN HERE -->
+
+                <!-- STAR RATING USERS CAN CLICK -->
+                <div class="rating" data-item="Masala Dosa"></div>
+                <div class="item">
+                  <div class="like-box" data-item="Masala Dosa">
+                    <span class="like-btn">👍</span>
+                    <span class="dislike-btn">👎</span>
+                    <span class="count like-count">0</span> |
+                    <span class="count dislike-count">0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="food-menu-item col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="food-image">
+              <img
+                src="https://imgs.search.brave.com/5QwfRr_ZztW9Pf7vG0VR97ZNTlQO46OIcRqbR0WylQY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/emVwdG9ub3cuY29t/L3Byb2R1Y3Rpb24v/aWstc2VvL3RyOnct/NDcwLGFyLTI0MDAt/MjQwMCxwci10cnVl/LGYtYXV0byxxLTgw/L2Ntcy9wcm9kdWN0/X3ZhcmlhbnQvNmMy/YjgzMzItOGZmYS00/OGUyLWJhYzktNzRm/ZWRhNGRhMzdjL1Zl/Zy1QdWZmLS5qcGVn"
+                alt=""
+              />
+            </div>
+            <div class="food-description">
+              <h2 class="food-title">Veg Puff</h2>
+              <p>Flaky puff pastry with mixed vegetable filling.</p>
+              <p class="food-price">Price: &#8377; 15</p>
+              <div class="item">
+                <!-- AVERAGE RATING SHOWN HERE -->
+
+                <!-- STAR RATING USERS CAN CLICK -->
+                <div class="rating" data-item="Masala Dosa"></div>
+                <div class="item">
+                  <div class="like-box" data-item="Masala Dosa">
+                    <span class="like-btn">👍</span>
+                    <span class="dislike-btn">👎</span>
+                    <span class="count like-count">0</span> |
+                    <span class="count dislike-count">0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="food-menu-item col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="food-image">
+              <img
+                src="https://imgs.search.brave.com/d4nnOqrLBZY3f5XFCEQu6_x7k1vALgFyJJIY3OGbMWE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzE4L2Jh/LzhkLzE4YmE4ZGNm/N2E3M2FhMzM3YjJk/NTVhMjQ2ZjU1YmJk/LmpwZw"
+                alt=""
+              />
+            </div>
+            <div class="food-description">
+              <h2 class="food-title">Paneer Pakoda (4 pcs)</h2>
+              <p>Soft paneer pieces dipped in gram flour batter and fried.</p>
+              <p class="food-price">Price: &#8377; 40</p>
+              <div class="item">
+                <!-- AVERAGE RATING SHOWN HERE -->
+
+                <!-- STAR RATING USERS CAN CLICK -->
+                <div class="rating" data-item="Masala Dosa"></div>
+                <div class="item">
+                  <div class="like-box" data-item="Masala Dosa">
+                    <span class="like-btn">👍</span>
+                    <span class="dislike-btn">👎</span>
+                    <span class="count like-count">0</span> |
+                    <span class="count dislike-count">0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="food-menu-item col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="food-image">
+              <img
+                src="https://imgs.search.brave.com/0p0J2iDabshgWaSKrwZIHtm-g_mSe1BkQj5VyAtC3wM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/Y3JlYXRlLnZpc3Rh/LmNvbS9hcGkvbWVk/aWEvc21hbGwvNzMz/MjE0ODQwL3N0b2Nr/LXBob3RvLXNlbGVj/dGl2ZS1mb2N1cy1p/bmRpYW4tc25hY2st/YnJlYWQtcGFrb3Jh/LWJsYWNrLWNlcmFt/aWMtcGxhdGUtc2Vy/dmU"
+                alt=""
+              />
+            </div>
+            <div class="food-description">
+              <h2 class="food-title">Bread Pakoda (1 pc)</h2>
+              <p>
+                Bread stuffed with mashed potato, dipped in batter, and fried.
+              </p>
+              <p class="food-price">Price: &#8377; 20</p>
+              <div class="item">
+                <!-- AVERAGE RATING SHOWN HERE -->
+
+                <!-- STAR RATING USERS CAN CLICK -->
+                <div class="rating" data-item="Masala Dosa"></div>
+                <div class="item">
+                  <div class="like-box" data-item="Masala Dosa">
+                    <span class="like-btn">👍</span>
+                    <span class="dislike-btn">👎</span>
+                    <span class="count like-count">0</span> |
+                    <span class="count dislike-count">0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="food-menu-item col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="food-image">
+              <img
+                src="https://imgs.search.brave.com/p1fqsZri93tn4HhTJwW-iELv1q-pe0xNBtULGcKLE8U/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcy/LmV4cG9ydGVyc2lu/ZGlhLmNvbS9wcm9k/dWN0X2ltYWdlcy9i/Yy1zbWFsbC8yMDIz/LzExLzk3NzcxMjYv/dmVnLW1vbW9zLTE2/NDE3NDA1MDgtNjE1/MDUxMi5qcGc"
+                alt=""
+              />
+            </div>
+            <div class="food-description">
+              <h2 class="food-title">Momos (Veg, 6 pcs)</h2>
+              <p>
+                Steamed dumplings filled with veggies, served with spicy
+                chutney.
+              </p>
+              <p class="food-price">Price: &#8377; 50</p>
+              <div class="item">
+                <!-- AVERAGE RATING SHOWN HERE -->
+
+                <!-- STAR RATING USERS CAN CLICK -->
+                <div class="rating" data-item="Masala Dosa"></div>
+                <div class="item">
+                  <div class="like-box" data-item="Masala Dosa">
+                    <span class="like-btn">👍</span>
+                    <span class="dislike-btn">👎</span>
+                    <span class="count like-count">0</span> |
+                    <span class="count dislike-count">0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="food-menu-item col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="food-image">
+              <img
+                src="https://imgs.search.brave.com/mOdmJq0St-saF6nkNrtUgU2zEKnUPEAiS_G_i-GvnW0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/dGFybGFkYWxhbC5j/b20vbWVkaWEvcmVj/aXBlL21ldGhvZC8y/MDI1LzAxLzE2L2Vn/Z19yb2xsX3N0ZXBf/MS0oMTMpLTE1LTE5/Nzk1Mi53ZWJw"
+                alt=""
+              />
+            </div>
+            <div class="food-description">
+              <h2 class="food-title">Egg Roll</h2>
+              <p>Fried egg on a paratha with onions and chutney.</p>
+              <p class="food-price">Price: &#8377; 40</p>
+              <div class="item">
+                <!-- AVERAGE RATING SHOWN HERE -->
+
+                <!-- STAR RATING USERS CAN CLICK -->
+                <div class="rating" data-item="Masala Dosa"></div>
+                <div class="item">
+                  <div class="like-box" data-item="Masala Dosa">
+                    <span class="like-btn">👍</span>
+                    <span class="dislike-btn">👎</span>
+                    <span class="count like-count">0</span> |
+                    <span class="count dislike-count">0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="feedback-section" id="feedback">
+      <div class="feedback-box">
+        <h2>We Value Your Feedback</h2>
+        <p>Your opinion helps improve our college canteen!</p>
+
+        <form id="feedbackForm">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" id="name" required />
+          </div>
+
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="email" required />
+          </div>
+
+          <div class="form-group rating-group">
+            <label>Rate Your Experience</label>
+            <div class="stars">
+              <i class="star" data-value="1">★</i>
+              <i class="star" data-value="2">★</i>
+              <i class="star" data-value="3">★</i>
+              <i class="star" data-value="4">★</i>
+              <i class="star" data-value="5">★</i>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Your Feedback</label>
+            <textarea id="message" required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Submit Feedback</button>
+
+          <p id="successMessage" class="success-msg">
+            Thank you for your feedback! ❤️
+          </p>
+        </form>
+      </div>
+    </section>
+    <footer class="site-footer" id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-lg-4">
+            <h3>College Canteen</h3>
+            <p>Delicious, fresh & affordable meals for students.</p>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div class="middle-col-card">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#food-menu">Menu</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4">
+            <h4>Contact</h4>
+            <p><strong>📍 Location:</strong> Techno Main Salt Lake</p>
+            <p><strong>📞 Phone:</strong> +91 9876543210</p>
+            <p><strong>📧 Email:</strong> canteen@technomain.edu</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2025 College Canteen. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./home-script.js"></script>
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

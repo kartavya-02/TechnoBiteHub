@@ -27,7 +27,7 @@
           window.close();
         } else {
           // otherwise, try to go to index.html (if exists)
-          window.location.href = 'index.html';
+          window.location.href = './Home/home.html';
         }
       }, 600);
     } else {
@@ -40,4 +40,5 @@
     isLoggedIn: () => localStorage.getItem(AUTH_KEY) === '1',
     logout: () => { localStorage.removeItem(AUTH_KEY); }
   };
-})();
+}
+)();
